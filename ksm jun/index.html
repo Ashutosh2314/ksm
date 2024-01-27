@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARN SEVA MADHYAM</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(180deg, #FFD700 0%, #FF6347 100%); /* Gold to Tomato gradient */
+            color: #333;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* White with transparency */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: box-shadow 0.3s ease-in-out; /* Smooth transition for subtle hover effect */
+        }
+        .container:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        h1, h2 {
+            color: #FF4500; /* Orange-Red */
+        }
+        p {
+            line-height: 1.6;
+        }
+        a {
+            color: #FF4500; /* Orange-Red */
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+        a:hover {
+            color: #FF6347; /* Tomato */
+        }
+        /* Smooth scroll effect */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Sun shining background */
+        .sun {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            margin-top: -150px;
+            margin-left: -150px;
+            background: radial-gradient(circle at 20% 20%, #ffd700, transparent 50%); /* Gold */
+            border-radius: 50%;
+            animation: shine 5s infinite linear;
+            z-index: 0;
+        }
+        @keyframes shine {
+            0% {
+                background: radial-gradient(circle at 20% 20%, #ffd700, transparent 50%);
+            }
+            50% {
+                background: radial-gradient(circle at 80% 80%, #ffd700, transparent 50%);
+            }
+            100% {
+                background: radial-gradient(circle at 20% 20%, #ffd700, transparent 50%);
+            }
+        }
+        /* Placeholder image styles */
+        .placeholder-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        /* Logo styles with floating animation */
+        .logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            z-index: 2; /* Ensure the logo stays above the background and container */
+            animation: floatLogo 3s infinite ease-in-out; /* Floating animation */
+        }
+        @keyframes floatLogo {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        /* Donation button styles with pulsating animation */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        input[type="submit"]:active {
+            transform: scale(0.95);
+        }
+        /* Container styles with subtle hover effect */
+        .container:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        /* Notification styles with bounce animation */
+        .notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: bounceInRight 1s ease-in-out; /* Bounce-in-right animation */
+        }
+        @keyframes bounceInRight {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(0);
+            }
+            40% {
+                transform: translateX(20px);
+            }
+            60% {
+                transform: translateX(10px);
+            }
+        }
+        /* Footer styles with fade-in animation */
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #333;
+            color: white;
+            animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+        }
+        /* Form styles */
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="email"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        /* Animated text at the center of the page */
+        .background-text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 20px;
+            color: black; /* Black font color */
+            white-space: nowrap; /* Prevent text from wrapping */
+            font-weight: bold; /* Make the text bold */
+            animation: backgroundText 10s infinite linear;
+            z-index: 1; /* Ensure the text stays behind other elements */
+        }
+        @keyframes backgroundText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img class="logo" src="logo.png" alt="Logo Placeholder">
+    <div class="sun"></div>
+    
+    <!-- Home Page -->
+    <div class="container" id="home">
+        <h1>Welcome to KARN SEVA MADHYAM</h1>
+        <img class="placeholder-image" src="th (4).jpeg" alt="Placeholder Image">
+        <p>The main motive of our helpline is to assist people who can't afford to eat throughout the day, similar to NGOs and charity funds. We aim to save lives by providing support to those in need.</p>
+        <p>My team and I are seeking donations from the youth of Bharat. We request a minimum contribution, as even a small amount can enable our team to provide valuable assistance to those in need.</p>
+        <p>If you are interested in making a donation, please use the form below. Your support is greatly appreciated, and we would be happy to provide you with more information about our cause or organization. Thank you for considering making a difference!</p>
+        
+        <!-- Donation Form and Google Form Section -->
+        <form id="donationForm">
+            <h2>Make a Donation</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="amount">Donation Amount (INR):</label>
+            <input type="text" id="amount" name="amount" required>
+
+            <input type="submit" value="Donate">
+        </form>
+        
+        <div id="google-form-section" class="google-form-container">
+            <h2>Google Form - KARN SEVA MADHYAM</h2>
+            <p>Click the following link to access the Google Form:</p>
+            <p><a href="https://forms.gle/mBFGNVh2uumGJyBCA" target="_blank">Google Form Link</a></p>
+        </div>
+
+        <!-- ... (Your existing content) ... -->
+    </div>
+
+    <!-- Animated text at the center of the page -->
+    <div class="background-text">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन</div>
+    
+    <!-- Navigation Links -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="#home">Home</a> | <a href="#" onclick="showNotification()">Notification</a>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        Poster Page is under construction. Check back later!
+        <span class="close-notification" onclick="closeNotification()">×</span>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2023 KARN SEVA MADHYAM. All Rights Reserved.
+    </footer>
+
+    <script>
+        // JavaScript to handle the notification
+        function showNotification() {
+            document.getElementById('notification').style.display = 'block';
+        }
+
+        function closeNotification() {
+            document.getElementById('notification').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
